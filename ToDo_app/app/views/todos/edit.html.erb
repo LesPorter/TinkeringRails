@@ -1,6 +1,11 @@
-<h1>Editing todo</h1>
+<table align="center" border="0" width="500" cellspacing="0" cellpadding="3">
+<tr><td>
+
+<h1 align="center">Editing todo</h1>
+<center><%= link_to 'Show', @todo %> |
+  <%= link_to 'Back', todos_path %></center>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @todo %> |
-<%= link_to 'Back', todos_path %>
+  </td></tr>
+</table>

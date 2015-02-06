@@ -1,9 +1,11 @@
+<table align="center" border="0" width="500" cellspacing="0" cellpadding="3">
+<tr><td>
+  
+  <h1 align="center"><%= @todo.title %></h1>
+  <center><%= link_to 'Edit', edit_todo_path(@todo) %> |
+    <%= link_to 'Back', todos_path %></center>
+  
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @todo.title %>
-</p>
 
 <p>
   <strong>Notes:</strong>
@@ -20,5 +22,5 @@
   <%= @todo.done %>
 </p>
 
-<%= link_to 'Edit', edit_todo_path(@todo) %> |
-<%= link_to 'Back', todos_path %>
+  </td></tr>
+</table>

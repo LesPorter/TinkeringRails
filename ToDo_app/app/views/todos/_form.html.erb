@@ -17,14 +17,14 @@
   </div>
   <div class="field">
     <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
+    <%= f.text_area :notes, :cols => "70", :rows => "5" %>
   </div>
   <div class="field">
     <%= f.label :due %><br>
     <%= f.date_select :due %>
   </div>
   <div class="field">
-    <%= f.label :done %><br>
+    <%= f.label :done %> 
     <%= f.check_box :done %>
   </div>
   <div class="actions">

@@ -10,6 +10,10 @@
 
 <p>My name is <b><%= @Home.name %></b> and my birthdate is <b><%= @Home.birthdate %></b>.</p>
 
-<p>This makes me <b><%= @Home.age %> years old</b> and there are <b><%= @Home.days_until_bday %> days until my next birthday</b>.</p>
+<% if @Home.now.to_date == @Home.birthdate_this_year.to_date %>
+<p><b><font color="#FF0000">Happy Birthday!</font></b></p>
+<% end %>
+
+<p>I am <b><%= @Home.age %> years old</b> and there are <b><%= @Home.days_until_bday %> days until my next birthday</b>.</p>
 
 

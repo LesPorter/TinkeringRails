@@ -2,14 +2,14 @@
 
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<p>Today is <%= Date.today %>.</p>
+<p>Today is <%= @Home.now %>.</p>
 
-<p>We are this many days into the week: <%= Date.today.wday %>. Only <%= 7 - Date.today.wday %> to go!</p>
+<p>We are this many days into the week: <%= @Home.now.wday %>. Only <%= 7 - @Home.now.wday %> to go!</p>
 
 <hr>
 
 <p>My name is <b><%= @Home.name %></b> and my birthdate is <b><%= @Home.birthdate %></b>.</p>
 
-<p>This makes me <b><%= @Home.age %> years old</b> and there are <%= @Home.days_until_bday %> days until my next birthday.</p>
+<p>This makes me <b><%= @Home.age %> years old</b> and there are <b><%= @Home.days_until_bday %> days until my next birthday</b>.</p>
 
 

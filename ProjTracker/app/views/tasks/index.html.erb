@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Project</th>
       <th>Name</th>
       <th>Owner</th>
@@ -14,10 +15,17 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
+        <td><% if task.due < Date.today %>
+          <img alt="Past due" src="http://intbaiau.ac.ir/images/images/alert.gif">
+          <% end %></td>
         <td><%= task.project.name %></td>
         <td><%= task.name %></td>
         <td><%= task.owner %></td>
-        <td><%= task.due %></td>
+        <td><% if task.due < Date.today %>
+          <font color="#FF0000"><b><%= task.due %></b></font>
+          <% else %>
+          <%= task.due %>
+          <% end %></td>
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>

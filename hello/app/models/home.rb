@@ -1,7 +1,7 @@
 class Home
   
   def name
-    name = "Les"
+    name = "Les Porter"
   end
   
   def now

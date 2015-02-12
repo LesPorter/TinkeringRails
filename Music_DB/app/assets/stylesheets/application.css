@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+.btn-primary {
+  background: #660000;
+  border: #660000;
+}
+
+.btn-primary:hover {
+  background: #990000;
+  border: #990000;
+}

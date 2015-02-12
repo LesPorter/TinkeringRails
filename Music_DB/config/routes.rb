@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'songs#index' #Changed from pages#home which was the static home page
+  root to: 'pages#home' #Changed from songs#index which was pointing to Songs
   
   get 'pages/home'
 

@@ -17,7 +17,8 @@
   </div>
   <div class="field">
     <%= f.label :genre_id %><br>
-    <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+    <% # I could have replaced Genre.all below with @genres if I added the reference to "new" in artists_controller.erb %>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name %>  
   </div>
   <div class="actions">
     <%= f.submit %>

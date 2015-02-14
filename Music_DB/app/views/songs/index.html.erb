@@ -1,29 +1,19 @@
-<h1>Songs</h1>
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Video</th>
-      <th>Artist</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @songs.each do |song| %>
-      <tr>
-        <td><%= song.name %></td>
-        <td><%= song.video %></td>
-        <td><%= song.artist.name %></td>
-        <td><%= link_to 'Show', song %></td>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<h1>&nbsp;Songs</h1>
+<p>&nbsp;&nbsp;<%= link_to 'New Song', new_song_path, :class => "label label-success" %></p>
 <br>
 
-<%= link_to 'New Song', new_song_path %>
+<div class="row">
+  <% @songs.each do |song| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div class="embed-container"><%= embed(song.video) %></div>
+      <div class="caption">
+        <h3><%= song.artist.name %> - <%= song.name %></h3>
+        <%= link_to 'Show', song, :class => "label label-primary" %> | 
+        <%= link_to 'Edit', edit_song_path(song),:class => "label label-default" %> | 
+        <%= link_to 'Destroy', song, :class => "label label-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

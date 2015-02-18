@@ -1,5 +1,7 @@
-<h1>Genres</h1>
-
+<h1>&nbsp;Genres</h1>
+<p>&nbsp;&nbsp;<%= link_to '+ New Genre', new_genre_path, :class => "label label-success" %>
+<br>
+  
 <table class="table table-hover">
   <thead>
     <tr>
@@ -19,7 +21,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Genre', new_genre_path %>

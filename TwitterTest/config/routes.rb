@@ -1,5 +1,25 @@
 Rails.application.routes.draw do
-  root 'pages#home'   # Set the home page
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+  resources :tweets, only: [:new, :create]
+  resources :sessions, only: [:create, :destroy]
+  resource :home, only: [:show]
+  
+  get 'tweets/new'
+
+  get 'tweets/create'
+
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
+  get 'home/show'
+
+  root 'home#show'   # Set the home page
   
   get 'pages/home'
 

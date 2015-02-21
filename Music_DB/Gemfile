@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Bundle Faker in order to add some lorem ipsum data
+gem 'faker', '~> 1.4.3'
 # Bundle bootstrap
 gem 'bootstrap-sass', '~> 3.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

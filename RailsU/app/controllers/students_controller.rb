@@ -4,12 +4,13 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @students = Student.search(params[:searchterm])
   end
 
   # GET /students/1
   # GET /students/1.json
   def show
+    # This enables me to display enrollment data on the show student view
     @enrollments = Enrollment.where(student_id: @student.id)
   end
 

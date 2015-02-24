@@ -6,6 +6,13 @@
   <!-- Default panel contents -->
   <div class="panel-heading">Panel heading</div>
 
+  <div class="panel-body">
+    <%= form_tag(students_path, method: "get") %>
+    <%= label_tag(:searchterm, "Find by last name:") %>
+    <%= text_field_tag(:searchterm) %>
+    <%= submit_tag("Search") %>
+  </div>
+  
 <table class="table">
   <thead>
     <tr>
@@ -29,5 +36,5 @@
     <% end %>
   </tbody>
 </table>
-
+  
 </div>

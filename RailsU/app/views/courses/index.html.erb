@@ -1,6 +1,12 @@
 <h1>Courses</h1>
+<br>
+<%= link_to 'New Course', new_course_path, :class => "btn-primary btn-sm" %>
+<br><br>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Number</th>
@@ -18,14 +24,12 @@
         <td><%= course.title %></td>
         <td><%= course.credits %></td>
         <td><%= course.department.name %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', course, :class => "label label-primary" %></td>
+        <td><%= link_to 'Edit', edit_course_path(course), :class => "label label-primary" %></td>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, :class => "label label-danger" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Course', new_course_path %>
+</div>

@@ -1,6 +1,12 @@
-<h1>Listing instructors</h1>
-
-<table>
+<h1>Instructors</h1>
+<br>
+<%= link_to 'New Instructor', new_instructor_path, :class => "btn-primary btn-sm" %>
+<br><br>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div>
+  
+<table class="table">
   <thead>
     <tr>
       <th>Last name</th>
@@ -16,14 +22,12 @@
         <td><%= instructor.last_name %></td>
         <td><%= instructor.first_name %></td>
         <td><%= instructor.hire_date %></td>
-        <td><%= link_to 'Show', instructor %></td>
-        <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
-        <td><%= link_to 'Destroy', instructor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', instructor, :class => "label label-primary" %></td>
+        <td><%= link_to 'Edit', edit_instructor_path(instructor), :class => "label label-primary" %></td>
+        <td><%= link_to 'Destroy', instructor, method: :delete, data: { confirm: 'Are you sure?' }, :class => "label label-danger" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Instructor', new_instructor_path %>
+</div>

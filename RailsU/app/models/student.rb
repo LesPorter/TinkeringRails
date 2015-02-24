@@ -1,6 +1,8 @@
 class Student < ActiveRecord::Base
   has_many :enrollments
   
+  self.per_page = 10
+  
   def self.search(searchterm)
     
     if !searchterm

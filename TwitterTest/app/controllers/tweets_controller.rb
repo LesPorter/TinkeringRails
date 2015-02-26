@@ -9,4 +9,8 @@ class TweetsController < ApplicationController
   def twitter_params
     params.require(:tweet).permit(:message)
   end
+  
+  def profile
+    # I manually added this
+  end
 end

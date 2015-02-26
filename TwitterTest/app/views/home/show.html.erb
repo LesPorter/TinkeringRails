@@ -1,6 +1,9 @@
 <% if !current_user.nil? %>
     <p>Click The link below to send a tweet.</p>
     <%= link_to "Send a Tweet", new_tweet_path %>
+
+    <!-- Just a static link to a page where I'm playing with profile stuff -->
+    <p><a href="tweets/profile.html">Profile examples</a></p>
 <% else %>
     <p>You must log in to send a tweet.</p>
 <% end %>

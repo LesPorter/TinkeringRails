@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'tweets/new'
 
   get 'tweets/create'
+  
+  get 'tweets/profile'  # I manually added this
 
   get 'sessions/new'
 

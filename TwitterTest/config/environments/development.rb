@@ -1,6 +1,6 @@
 Rails.application.configure do
-  config.twitter_key = "hidden"
-  config.twitter_secret = "hidden"
+  config.twitter_key = "visible"
+  config.twitter_secret = "visible"
   
   # Settings specified here will take precedence over those in config/application.rb.
 

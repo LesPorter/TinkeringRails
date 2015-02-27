@@ -20,4 +20,60 @@ class User < ActiveRecord::Base
     
     client.update(tweet)
   end
+  
+  def status(tweetID)
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = Rails.application.config.twitter_key
+      config.consumer_secret     = Rails.application.config.twitter_secret
+      config.access_token        = oauth_token
+      config.access_token_secret = oauth_secret
+    end
+    
+    client.status(tweetID)
+  end
+  
+  def timeline(username)
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = Rails.application.config.twitter_key
+      config.consumer_secret     = Rails.application.config.twitter_secret
+      config.access_token        = oauth_token
+      config.access_token_secret = oauth_secret
+    end
+    
+    client.user_timeline(username)
+  end
+  
+  def user(username)
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = Rails.application.config.twitter_key
+      config.consumer_secret     = Rails.application.config.twitter_secret
+      config.access_token        = oauth_token
+      config.access_token_secret = oauth_secret
+    end
+    
+    client.user(username)
+  end
+  
+  def retweeters(tweetID)
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = Rails.application.config.twitter_key
+      config.consumer_secret     = Rails.application.config.twitter_secret
+      config.access_token        = oauth_token
+      config.access_token_secret = oauth_secret
+    end
+    
+    client.retweeters_of(tweetID)
+  end
+  
+  def retweet(tweetID)
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = Rails.application.config.twitter_key
+      config.consumer_secret     = Rails.application.config.twitter_secret
+      config.access_token        = oauth_token
+      config.access_token_secret = oauth_secret
+    end
+    
+    client.retweet(tweetID)
+  end
+  
 end

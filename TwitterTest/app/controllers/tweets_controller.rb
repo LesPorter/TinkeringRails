@@ -11,6 +11,7 @@ class TweetsController < ApplicationController
   end
   
   def profile
-    # I manually added this
+    # current_user.tweet("robot")   This worked.  It tweeted.
+    # current_user.status("569953713093287936")  Didn't work.
   end
 end

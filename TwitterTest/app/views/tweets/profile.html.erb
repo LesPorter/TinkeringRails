@@ -1,1 +1,14 @@
-starting here
+<p>Return a single tweet using its ID<br>
+  <%= current_user.status(567371963812020226) %></p>
+
+<p>Return a user timeline using username<br>
+  <%= current_user.timeline("robot") %></p>
+
+<p>Return a user using username<br>
+  <%= current_user.user("robot") %></p>
+
+<p>Return the users who retweeted a tweet using the tweet's ID<br>
+  <%= current_user.retweeters(553285289779953665) %></p>
+
+<p>Retweet a tweet using the tweet's ID<br>
+  <%= current_user.retweet(565338802974392321) %></p>

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: "things#index"
   
+  get 'things/find_by_id' => 'things#find_by_id'
+  post 'things/display_by_id' => 'things#display_by_id'
+  
   resources :things
 
   # The priority is based upon order of creation: first created -> highest priority.

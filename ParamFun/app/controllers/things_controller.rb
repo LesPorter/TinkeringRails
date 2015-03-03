@@ -1,6 +1,19 @@
 class ThingsController < ApplicationController
   before_action :set_thing, only: [:show, :edit, :update, :destroy]
 
+  def find_by_id
+  end
+  
+  def display_by_id
+    @things = Thing.all
+    #exists = false
+    
+    if params[:input].to_i > 0 && params[:input].to_i <= @things.count
+      @exists = true
+      @thing = Thing.find(params[:input].to_i)
+    end
+  end
+  
   # GET /things
   # GET /things.json
   def index

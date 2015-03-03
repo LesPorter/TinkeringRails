@@ -1,0 +1,8 @@
+<% if @exists %>
+  <p>The Thing you requested is</p>
+  <%= @thing.name %><br>
+<% else %>
+  <p>That Thing does not exist!</p>
+<% end %>
+
+<p><%= link_to "Try Again?", '/things/find_by_id' %></p>

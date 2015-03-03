@@ -6,7 +6,7 @@ class ThingsController < ApplicationController
   
   def display_by_id
     @things = Thing.all
-    #exists = false
+    @exists = false
     
     if params[:input].to_i > 0 && params[:input].to_i <= @things.count
       @exists = true

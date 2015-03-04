@@ -20,4 +20,11 @@ module RailsATM
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
   end
+  
+  # Create a place to store information for the duration of the session
+  RailsATM::Application.configure do
+    config.message = 'Welcome to the Rails ATM!'
+    config.balance = 0
+  end
+  
 end

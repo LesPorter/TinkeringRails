@@ -1,2 +1,34 @@
-<h1>Game#home</h1>
-<p>Find me in app/views/game/home.html.erb</p>
+<h1>Rock, Paper, Scissors</h1>
+<p>Please make your choice below.</p>
+<table>
+  <thead>
+    <tr>
+      <td>Paper</td><td>Rock</td><td>Scissors</td>
+    <tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= form_tag("/game/home", method: "post") do %>
+        <%= hidden_field_tag(:gameaction, value = "paper", options = {}) %>
+        <%= submit_tag("Paper") %> 
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag("/game/home", method: "post") do %>
+        <%= hidden_field_tag(:gameaction, value = "rocks", options = {}) %>
+        <%= submit_tag("Rock") %> 
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag("/game/home", method: "post") do %>
+        <%= hidden_field_tag(:gameaction, value = "scissors", options = {}) %>
+        <%= submit_tag("Scissors") %> 
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td><%= RockPaperScissors::Application.config.message %></td>
+    </tr>
+  </tbody>
+</table>

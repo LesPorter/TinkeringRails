@@ -1,34 +1,40 @@
-<h1>Rock, Paper, Scissors</h1>
-<p>Please make your choice below.</p>
-<table>
+<h2>Rock Paper Scissors</h2>
+<h5>Choose your weapon carefully.</h5>
+<table border="1">
   <thead>
     <tr>
-      <td>Paper</td><td>Rock</td><td>Scissors</td>
+      <td><center><h5>Rock</h5></center></td><td><center><h5>Paper</h5></center></td><td><center><h5>Scissors</h5></center></td>
     <tr>
   </thead>
   <tbody>
     <tr>
-      <td>
+      <td><center>
         <%= form_tag("/game/home", method: "post") do %>
-        <%= hidden_field_tag(:gameaction, value = "paper", options = {}) %>
-        <%= submit_tag("Paper") %> 
+        <%= hidden_field_tag(:user_weapon, value = "rock", options = {}) %>
+        <%= image_submit_tag("http://pix.iemoji.com/sbemojix2/0129.png") %> 
         <% end %>
-      </td>
-      <td>
+      </center></td>
+      <td><center>
         <%= form_tag("/game/home", method: "post") do %>
-        <%= hidden_field_tag(:gameaction, value = "rocks", options = {}) %>
-        <%= submit_tag("Rock") %> 
+        <%= hidden_field_tag(:user_weapon, value = "paper", options = {}) %>
+        <%= image_submit_tag("http://pix.iemoji.com/sbemojix2/0130.png") %> 
         <% end %>
-      </td>
-      <td>
+      </center></td>
+      <td><center>
         <%= form_tag("/game/home", method: "post") do %>
-        <%= hidden_field_tag(:gameaction, value = "scissors", options = {}) %>
-        <%= submit_tag("Scissors") %> 
+        <%= hidden_field_tag(:user_weapon, value = "scissors", options = {}) %>
+        <%= image_submit_tag("http://pix.iemoji.com/sbemojix2/0131.png") %> 
         <% end %>
-      </td>
-    </tr>
-    <tr>
-      <td><%= RockPaperScissors::Application.config.message %></td>
+      </center></td>
     </tr>
   </tbody>
 </table>
+<h3><%= RockPaperScissors::Application.config.message %></h3>
+
+<!-- Just for testing variables -->
+<!--user_weapon = <%= @user_weapon %><br>
+computer_weapon = <%= @computer_weapon %><br>
+results = <%= @results %><br>
+verdict = <%= @verdict %><br>
+user_score = <%= @user_score %><br>
+computer_score = <%= @computer_score %><br>-->

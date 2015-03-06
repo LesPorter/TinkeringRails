@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'game#home'
   
   get 'game/home'
+  post 'game/home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

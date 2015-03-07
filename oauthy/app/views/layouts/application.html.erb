@@ -16,11 +16,14 @@
 <% else %>
   <%= link_to "Sign Up", new_person_registration_path %>
 	<%= link_to "Sign in with Facebook", person_omniauth_authorize_path(:facebook) %>
-	<% # link_to "Sign in with Twitter", person_omniauth_authorize_path(:twitter) %>
+	<%= link_to "Sign in with Twitter", person_omniauth_authorize_path(:twitter) %>
 	<% # link_to "Sign in with LinkedIn", person_omniauth_authorize_path(:linkedin) %>
 <% end %>
 
+<!--<p>Twitter APPID: <%= ENV['TWITTER_APPID'] %></p>
+<p>Twitter KEY: <%= ENV['TWITTER_KEY'] %></p>-->
+  
 <%= yield %>
-
+  
 </body>
 </html>

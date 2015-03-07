@@ -21,11 +21,11 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
   require 'omniauth-facebook'
-  # require 'omniauth-twitter'
+  require 'omniauth-twitter'
   # require 'omniauth-linkedin'
   
   config.omniauth :facebook, ENV['FACEBOOK_APPID'], ENV['FACEBOOK_KEY']
-  # config.omniauth :twitter, ENV['TWITTER_APPID'], ENV['TWITTER_KEY']
+  config.omniauth :twitter, ENV['TWITTER_APPID'], ENV['TWITTER_KEY']
   # config.omniauth :linkedin, ENV['LINKEDIN_APPID'], ENV['LINKEDIN_KEY']
 
   # ==> Configuration for any authentication mechanism

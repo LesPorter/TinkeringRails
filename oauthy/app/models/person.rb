@@ -4,6 +4,7 @@ class Person < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   
+  # Facebook
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     person = Person.where(:provider => auth.provider, :uid => auth.uid).first
     if person
@@ -24,25 +25,26 @@ class Person < ActiveRecord::Base
     end
   end
   
-#   def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
-#     person = Person.where(:provider => auth.provider, :uid => auth.uid).first
-#     if person
-#       return person
-#     else
-#       registered_person = Person.where(:email => auth.uid + "@twitter.com").first
-#       if registered_person
-#         return registered_person
-#       else
+  # Twitter
+  def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
+    person = Person.where(:provider => auth.provider, :uid => auth.uid).first
+    if person
+      return person
+    else
+      registered_person = Person.where(:email => auth.uid + "@twitter.com").first
+      if registered_person
+        return registered_person
+      else
 
-#         person = Person.create!(username:auth.extra.raw_info.name,
-#                             provider:auth.provider,
-#                             uid:auth.uid,
-#                             email:auth.uid + '@twitter.com' ,
-#                             password:Devise.friendly_token[0,20],
-#                           )
-#       end
-#     end
-#   end
+        person = Person.create!(username:auth.extra.raw_info.name,
+                            provider:auth.provider,
+                            uid:auth.uid,
+                            email:auth.uid + '@twitter.com' ,
+                            password:Devise.friendly_token[0,20],
+                          )
+      end
+    end
+  end
   
 #   def self.connect_to_linkedin(auth, signed_in_resource=nil)
 #     person = Person.where(:provider => auth.provider, :uid => auth.uid).first

@@ -55,21 +55,20 @@ class PagesController < ApplicationController
 #     pdf.text "And this line of text will go just below the previous one."
     
     # Create a bounding box
-    pdf.bounding_box([50, pdf.cursor], :width => 400, :height => 450) do
-      # Draw a stroke around the bounding box
-      pdf.stroke_bounds
+#     pdf.bounding_box([50, pdf.cursor], :width => 400, :height => 450) do
+#       # Draw a stroke around the bounding box
+#       pdf.stroke_bounds
       
-      # Add 3 images at the left, center, and right positions
-      [:left, :center, :right].each do |position|
-        pdf.text "Image aligned to the #{position}."
-        pdf.image "#{Prawn::DATADIR}/images/stef.jpg", :position => position
-      end
+#       # Add 3 images at the left, center, and right positions
+#       [:left, :center, :right].each do |position|
+#         pdf.text "Image aligned to the #{position}."
+#         pdf.image "#{Prawn::DATADIR}/images/stef.jpg", :position => position
+#       end
       
-      # Add an image 50 pixels from the left side of the bounding box
-      pdf.text "The next image has a 50 point offset from the left boundary"
-      pdf.image "#{Prawn::DATADIR}/images/stef.jpg", :position => 50
-    end
-
+#       # Add an image 50 pixels from the left side of the bounding box
+#       pdf.text "The next image has a 50 point offset from the left boundary"
+#       pdf.image "#{Prawn::DATADIR}/images/stef.jpg", :position => 50
+#     end
     
     # Produce the PDF
     # -------------------------------------------------------------------------

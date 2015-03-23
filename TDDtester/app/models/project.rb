@@ -1,7 +1,3 @@
-class Project
-  
-  def done?
-    true
-  end
-  
+class Project < ActiveRecord::Base
+  has_many :tasks
 end

@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# Testing
+gem 'rspec-rails', '~> 3.2.1'
+gem 'capybara', '~> 2.4.4'
+gem 'poltergeist', '~> 1.6.0'
 # Bundle Faker for some test data
 gem 'faker', '~> 1.4.3'
 # adding starter_generators to play with CSS

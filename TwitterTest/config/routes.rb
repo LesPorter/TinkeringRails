@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
   
   get 'timeline/lookup'
+  
+  get 'search/keywords'
 
   get 'home/show'
 

@@ -7,7 +7,11 @@ class TimelineController < ApplicationController
     # Get profile description
     @desc = current_user.user('FAIL').description
     
-    # @tweets = current_user.user_timeline('FAIL', {count: 3})
+    # Get profile timeline
+    @tweets = current_user.timeline('FAIL')
+   
+    # Followers
+    @followers = current_user.followers("FAIL")
     
     # user_timeline('FAIL', options = {}) ⇒ Array<Twitter::Tweet>
     

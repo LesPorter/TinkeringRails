@@ -25,5 +25,19 @@
 
 <br>
 
-<h2>Checkout</h2>
-the magic goes here...
+<h2>Check out!</h2>
+<%= form_tag charges_path do %>
+  <article>
+    <label class="amount">
+      <span>Amount: $<%= @total_charges %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="sk_test_o805M12t09E78dxlfiLT1Ggl"
+          data-email="<%= current_student.email %>"
+          data-description="bookstore charges"
+          data-amount=<%= @total_charges * 100 %></script>
+<% end %>
+<br>
+<%= link_to 'Shop for more items', books_path %>

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# E-commerce
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # Login
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

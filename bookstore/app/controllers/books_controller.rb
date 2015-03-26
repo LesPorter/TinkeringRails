@@ -1,5 +1,14 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  
+  def add_to_cart
+    @book = set_book
+    @quantity = params[:quantity].to_i
+    total = @book.price * @quantity
+    CartItem.create!(student_id: current_student.id, book_id: @book.id, quantity: @quantity, linetotal: total)
+    flash[:notice] = "You've added " + @quantity.to_s + " to your cart, for a total of $ " + total.to_s + "."
+    redirect_to :action => "show", :id => @book.id
+  end
 
   # GET /books
   # GET /books.json

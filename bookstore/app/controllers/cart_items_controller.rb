@@ -4,7 +4,11 @@ class CartItemsController < ApplicationController
   # GET /cart_items
   # GET /cart_items.json
   def index
-    @cart_items = CartItem.all
+    @cart_items = CartItem.where(student_id: current_student.id)
+    @total_charges = 0
+    CartItem.where(student_id: current_student.id).find_each do |theItem|
+      @total_charges =  @total_charges + theItem.linetotal
+    end
   end
 
   # GET /cart_items/1
@@ -69,6 +73,6 @@ class CartItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cart_item_params
-      params.require(:cart_item).permit(:quantity, :student_id, :book_id)
+      params.require(:cart_item).permit(:quantity, :student_id, :book_id, :linetotal)
     end
 end

@@ -1,17 +1,10 @@
 class SearchController < ApplicationController
   def keywords
     
-    # Followers
-    @results = current_user.search("mrk.tv/")
+    # Search results
+    @meerkat = current_user.search("mrk.tv/")
+    @periscope = current_user.search("periscope.tv/")
     
-    
-#     @current_user.search("to:justinbieber marry me", result_type: "recent").take(3).each do |tweet|
-#       @results = tweet.text
-#     end
-    
-#     current_user::Search.new
-#     search = Twitter::Search.new.containing("obama")
-#     @results = client.search('obama') 
-    
+   
   end
 end
